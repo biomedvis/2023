@@ -5,7 +5,7 @@ draft: false
 image: "images/team/ingrid-hotz.jpg"
 jobtitle: "Organization Committee"
 weburl: "https://liu.se/en/employee/ingho32"
-weight: 4
+weight: 3
 layout: team
 promoted: true
 ---

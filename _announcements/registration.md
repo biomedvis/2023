@@ -1,12 +1,12 @@
 ---
 title: "Registration"
-date: 2022-03-18
+date: 2023-07-31
 featured: true
 school: true
 weight: 1
 layout: announcement
-description: Please register for the Summer School, it is for free. The registration is open until 15th of August.
-link: https://skjemaker.app.uib.no/view.php?id=13063619
+description: The registration will be open in mid August.
+link: https://conferences.eg.org/vcbm2023/
 ---
 
 You can register for the Summer School using the following link, it is for free.
