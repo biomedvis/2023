@@ -8,7 +8,7 @@ intro_image_hide_on_mobile: true
 
 # Summer School
 
-We announce the second Summer School on Biological and Medical Visualization: the **Bio+Med+Vis Summer School**!
+We announce the third Summer School on Biological and Medical Visualization: the **Bio+Med+Vis Summer School**!
 
 The Summer School will be held on **September 19--20, 2023** in **Norrköping, Sweden**. The event is collocated with [EG VCBM conference](https://conferences.eg.org/vcbm2023/), which will be held on September 20--22 in Norrköping, Sweden. Participants can anticipate excellent **talks** and **tutorials**, given by experts in Biological and Medical Visualization. 
 
