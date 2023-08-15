@@ -5,7 +5,7 @@ draft: false
 image: "images/team/johanna-beyer.jpg"
 jobtitle: "Organization Committee"
 weburl: "https://johanna-b.github.io/"
-weight: 1
+weight: 0
 layout: team
 promoted: true
 ---
