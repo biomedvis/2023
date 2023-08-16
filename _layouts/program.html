@@ -224,6 +224,10 @@ layout: default
 							<div class="bio">{{ speaker.bio }}</div>
 						</div>
 						{% endif %}
+
+						{% if speaker.abstract %}
+						<div class="abstract"><strong>Abstract:</strong>{{ speaker.abstract }}</div>
+						{% endif %}
 						
 						{% if speaker.video %}
 						<div class="video">
