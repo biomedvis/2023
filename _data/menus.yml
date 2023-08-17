@@ -9,7 +9,7 @@ main:
     url: "/team/"
     weight: 3
   - name: "Registration"
-    url: "https://conferences.eg.org/vcbm2023/"
+    url: "https://conferences.eg.org/vcbm2023/information-for-attendees/registration/"
     weight: 4
   - name: "Contact"
     url: "/contact/"
@@ -20,7 +20,7 @@ footer:
     url: "/"
     weight: 1
   - name: "Registration"
-    url: "https://skjemaker.app.uib.no/view.php?id=13063619"
+    url: "https://conferences.eg.org/vcbm2023/information-for-attendees/registration/"
     weight: 2  
   - name: "Contact"
     url: "/contact/"
