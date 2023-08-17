@@ -14,14 +14,12 @@ The Summer School will be held on **September 19--20, 2023** in **Norrköping, S
 
 The Summer School is primarily targeting M.Sc. and Ph.D. students in Computer Science, but anyone who wants to learn more about principles and challenges in visualization for Life Sciences applications is welcome! No preliminary knowledge of Bio+Medical visualization is necessary.
 
-<!--
-The registration for the Summer School will be **free of charge** and it will provide access to an educational platform, where all materials will be available afterwards. To join us, just fill in the [registration form](https://skjemaker.app.uib.no/view.php?id=13063619) before **August 15, 2023**. 
--->
+The registration for the Summer School is **free of charge** and it will provide access to an educational platform, where all materials will be available afterward. To join us, just fill in the [registration form](https://conferences.eg.org/vcbm2023/information-for-attendees/registration/). Note that you can attend only the Summer School if you do not wish to attend VCBM which charges additional fees.
 
 We are looking forward to seeing you at the Bio+Med+Vis Summer School! 
 
 [The Organization Team](https://biomedvis.github.io/team/): 
-Johanna Beyer, Jan Byška, Katarína Furmanová, Ingrid Hotz, Daniel Jönsson, Barbora Kozlíková, Renata Raidou,
+Johanna Beyer, Jan Byška, Katarína Furmanová, Ingrid Hotz, Daniel Jönsson, Barbora Kozlíková, Renata Raidou
 
 
 This event is endorsed by:
