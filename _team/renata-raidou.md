@@ -11,7 +11,7 @@ promoted: true
 ---
 
 
-Assistant Prof. (Tenure Track) at TU Wien, Austria and at the University of Groningen, the Netherlands. 
+Assistant Prof. (Tenure Track) at TU Wien, Austria. 
 
 
 Research Interests: Visual Analytics for BioMedical Applications, Comparative Visualization, Uncertainty Visualization, Medical Data Physicalization

@@ -19,7 +19,7 @@ The registration for the Summer School is **free of charge** and it will provide
 We are looking forward to seeing you at the Bio+Med+Vis Summer School! 
 
 [The Organization Team](https://biomedvis.github.io/team/): 
-Johanna Beyer, Jan Byška, Katarína Furmanová, Ingrid Hotz, Daniel Jönsson, Barbora Kozlíková, Renata Raidou
+Jan Byška, Katarína Furmanová, Ingrid Hotz, Daniel Jönsson, Barbora Kozlíková, Renata Raidou
 
 
 This event is endorsed by:

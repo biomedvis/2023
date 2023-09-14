@@ -2,7 +2,7 @@
 title: "Daniel Jönsson"
 date: 2020-02-10
 draft: false
-image: "images/team/daniel_jonsson.jpg"
+image: "images/team/daniel-jonsson.jpeg"
 jobtitle: "Organization Committee"
 weburl: "https://liu.se/en/employee/danjo37"
 weight: 4
