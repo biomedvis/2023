@@ -32,18 +32,6 @@ layout: default
 .table-program th .date {
 	display:block;
 }
-.table-program .slot-size-1{
-	height: 30px;
-}
-.table-program .slot-size-2{
-	height: 60px;
-}
-.table-program .slot-size-3{
-	height: 90px;
-}
-.table-program .slot-size-4{
-	height: 120px;
-}
 .table-program .talk-content{
 	vertical-align: middle;
 	text-align: center;
@@ -124,7 +112,7 @@ layout: default
     <div class="col-12">
       <div class="service service-single">
         <h1 class="title">{{page.title}}</h1>
-		Preliminary program outline. Actual speakers are currently negotiated and we will add names and topics soon.
+		<!-- Preliminary program outline. Actual speakers are currently negotiated and we will add names and topics soon. -->
         <div class="content">	
 			{{content}}
 			<div class="table-responsive">
@@ -139,57 +127,64 @@ layout: default
 						<span class="date">20th September 2023</span>
 					</th>
 				</tr>	
-				<!-- generate program based on the 15 minutes intervals -->
+				<!-- generate program based on the 5min intervals -->
+				{% assign slot_size_min = 5 %}
 				{% for hour in (9..17) %}
 					{% if hour < 10 %}
-						{% assign hour_fixed = '0' | append : hour %}
+						{% assign hour_text = '0' | append : hour %}
 					{% else %}
-						{% assign hour_fixed = hour %}
+						{% assign hour_text = hour %}
 					{% endif %}
-					{% assign hour_next = hour_fixed %}
-					{% for min in (0..3) %}
-						{% assign quater = min | times : 15 %}
-						{% assign quater_next = min | plus : 1 | times : 15 %}
+					{% assign hour_text_next = hour_text %}
+					{% for min in (0..11) %}
+						{% assign minutes_text = min | times : slot_size_min %}
+						{% assign minutes_text_next = min | plus : 1 | times : slot_size_min %}
 						{% if min == 0 %}
-							{% assign quater = '00' %}
+							{% assign minutes_text = '00' %}
+							{% assign minutes_text_next = '05' %}
+							
 						{% endif %}
-						{% if min == 3 %}
-							{% assign quater_next = '00' %}
-							{% assign hour_next = hour_fixed | plus: 1 %}
+						{% if min == 1 %}
+							{% assign minutes_text = '05' %}
 						{% endif %}
-						{% assign start_time = hour_fixed | append: ':' | append : quater %}
-						{% assign slot = hour_fixed | append: ':' | append : quater | append: ' - ' | append: hour_next | append: ':' | append : quater_next  %}
+						{% if min == 11 %}
+							{% assign minutes_text_next = '00' %}
+							{% assign hour_text_next = hour_text | plus: 1 %}
+						{% endif %}
+						{% assign start_time = hour_text | append: ':' | append : minutes_text %}
+						{% assign slot_text = hour_text | append: ':' | append : minutes_text | append: ' - ' | append: hour_text_next | append: ':' | append : minutes_text_next  %}
 						
-						<!-- creates each line in the program with 15min intervals -->
-						<tr>
-							<td class="time">{{slot}}</td>
+						<!-- creates line in the program for each interval -->
+						<tr>					
 							{% for day_in_week in days%}
-							{% assign data = site.data.program | where: "day", day_in_week | where: "start", start_time %}
-							{% if data.size > 0 %}			
-								{% assign speaker = data[0] %}
-							
-								<!-- computes the number of 15min slots the lecture will take -->
-								{% assign time_start = speaker.start | split : ":" %}
-								{% assign time_end = speaker.end | split : ":" %}
-								{% assign hours = time_end[0] | minus : time_start[0] %}
-								{% assign minutes = time_end[1] | minus : time_start[1] %}
-								{% assign lenght = hours | times : 60 | plus : minutes | divided_by : 15 %}
-							
-								<!-- generates the lecture slot by merging multiple 15min slots -->
-								<td rowspan="{{lenght}}" class="slot-size-{{lenght}}">
-									<div class="talk-content" style="background-image: url({{ "/images/program/" | relative_url }}{{speaker.icon}});"> 
-										<div class="spaker-info">
-											<div class="title">{{speaker.title}}</div> 
-											<div class="speaker">
-											{% for speaker in data %}
-												{% if forloop.index0 > 0 %} & {% endif %}
-												<a href="#{{speaker.name}}">{{speaker.name}}</a>
-											{% endfor %}
+								{% assign data = site.data.program | where: "day", day_in_week | where: "start", start_time %}
+								{% if data.size > 0 %}			
+									{% assign speaker = data[0] %}									
+									<!-- computes the number of slots the lecture will take -->
+									{% assign time_start = speaker.start | split : ":" %}
+									{% assign time_end = speaker.end | split : ":" %}
+									{% assign hours = time_end[0] | minus : time_start[0] %}
+									{% assign minutes = time_end[1] | minus : time_start[1] %}
+									{% assign lenght = hours | times : 60 | plus : minutes | divided_by : slot_size_min %}
+								
+									
+									{% if forloop.first %}
+										{% assign merged_slot_text = speaker.start | append: ' - ' | append : speaker.end %}
+										<td rowspan={{lenght}} class="time">{{merged_slot_text}}</td>
+									{% endif %}
+								
+									<!-- generates the lecture slot by merging multiple smaller slots -->
+									<td rowspan={{lenght}} style="height:{{lenght | times : 10}}px">
+										<div class="talk-content" style="background-image: url({{ "/images/program/" | relative_url }}{{speaker.icon}});"> 
+											<div class="spaker-info">
+												<div class="title">{{speaker.title}}</div> 
+												<div class="speaker">
+													<a href="#{{speaker.name}}">{{speaker.name}}</a>
+												</div>
 											</div>
-										</div>	
-									</div>
-								</td>
-							{% endif %}
+										</div>
+									</td>
+								{% endif %}
 							{% endfor %}
 						</tr>
 					{% endfor %}
